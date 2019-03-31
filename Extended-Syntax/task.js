@@ -1,4 +1,4 @@
-
+"use strict";
 
 function calculateQuadraticEquation(){
     let a = +window.a.value;
@@ -11,20 +11,22 @@ function calculateQuadraticEquation(){
 }
 
 function getResult(a,b,c){
-    "use strict";
+
 
     let discr = b ** 2 - 4 * a * c, x;
 
     if (discr < 0) {
+    	x = [];
         console.log("No radicals");
     } else if (discr == 0) {
         x = (-b) / (2*a);
         console.log("Only one radical, x = " + x);
     } else {
-        x = (-b + (discr ** (1/2) ) ) / 2 * a;
+        x = (-b + Math.sqrt(discr) ) / 2 * a;
         console.log("The first radical x1 = " + x);
-        x = (-b - (discr ** (1/2) ) ) / 2 * a;
+        x = (-b - Math.sqrt(discr) ) / 2 * a;
         console.log("The second radical x2 = " + x);
+        x = [(-b + Math.sqrt(discr) ) / 2 * a, (-b - Math.sqrt(discr) ) / 2 * a];
     }
     return x;
 }
@@ -37,14 +39,10 @@ function calculateDrinkTask(){
 }
 
 function askDrink(name,dateOfBirthday){
-    "use strict";
 
-    function getFullYear(dateOfBirthday) {
-        let result = dateOfBirthday - new Date();
-        return result;
-    }
+    let new Date();
 
-    let age = getFullYear(dateOfBirthday);
+    let age = new Date().getFullYear() - dateOfBirthday.getFullYear();
 
     if (age >= 18) {
     result = `Не желаете ли олд-фэшн, ${name}?`;
@@ -64,15 +62,10 @@ function calculateAverageRating(){
 
 function getAverageMark(marks){
     
-    let amountOfMarks =0;
     let i = 0;
     let middleMark;
 
-    for (i = 0; i < marks.length; i++) {
-        amountOfMarks += 1;
-    }
-
-    if (amountOfMarks > 5) {
+    if (marks.length > 5) {
         console.log("Amount of marks more than 5");
         for (i = 0; i < marks.length; i++) {
         console.log(marks[i]);
