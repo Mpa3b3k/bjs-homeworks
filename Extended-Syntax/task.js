@@ -40,8 +40,6 @@ function calculateDrinkTask(){
 
 function askDrink(name,dateOfBirthday){
 
-    let new Date();
-
     let age = new Date().getFullYear() - dateOfBirthday.getFullYear();
 
     if (age >= 18) {
@@ -67,9 +65,7 @@ function getAverageMark(marks){
 
     if (marks.length > 5) {
         console.log("Amount of marks more than 5");
-        for (i = 0; i < marks.length; i++) {
-        console.log(marks[i]);
-        }
+        marks.splice(5);
     } 
 
     let summOfMarks = 0;
