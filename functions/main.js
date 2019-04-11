@@ -4,16 +4,18 @@ function getSolutions(a,b,c){
 
 
     let discr = b ** 2 - 4 * a * c, x1, x2;
-    let radical = { roots: [x1, x2], D: discr };
+    let radical;
 
     if (discr < 0) {
-        x1, x2 = undefined;
+        radical = { D: discr };
     } else if (discr == 0) {
         x1 = (-b) / (2*a);
+        radical = { roots: [x1], D: discr };
         console.log("Only one radical, x = " + x);
     } else {
         x1 = (-b + Math.sqrt(discr) ) / 2 * a;
         x2 = (-b - Math.sqrt(discr) ) / 2 * a;
+        radical = { roots: [x1, x2], D: discr };
     }
     return radical;
 }
@@ -46,10 +48,13 @@ function getPersonData( secretData ) {
 function naming(a) {
     if (a == 0) {
         console.log("Rodrigo");
+        return "Rodrigo"
     } else if (a == 1) {
         console.log("Emilio");
+        return "Emilio"
     } else {
         console.log("Are you kidding me?!");
+        return "Are you kidding me?!"
     }
 }
 
