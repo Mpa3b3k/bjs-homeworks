@@ -33,14 +33,15 @@ function sayHello() {
 }
 
 function getGreeting(name) {
+	let greeting;
 
     if (name != " ") || (name != undefined) || (name != null) {
         console.log(`Привет, мир! Меня зовут ${name}`);
-        let greeting = name;
+        greeting = name;
     } 
     else {
         console.log(`Привет, мир! Меня зовут Аноним`);
-        let greeting = "Аноним";
+        greeting = "Аноним";
     }
 
     return greeting;
