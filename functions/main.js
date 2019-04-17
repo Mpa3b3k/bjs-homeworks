@@ -62,11 +62,16 @@ function naming(a) {
 
 function getAverageScore( data ) {
     
+	let object = {};
 
-    return {}
+	for (let prop in data) {
+		object.data[prop] = findAverage(data[prop]);
+	}
+
+    return object;
 }
 
-function findAverage(...mass) {
+function findAverage(mass) {
     let answer, summ = 0;
 
     for (let i = 0; i < mass.length; i++) {
