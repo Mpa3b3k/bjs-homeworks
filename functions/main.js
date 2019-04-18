@@ -65,7 +65,7 @@ function getAverageScore( data ) {
 	let object = {};
 
 	for (let prop in data) {
-		object.data[prop] = findAverage(data[prop]);
+		object[prop] = findAverage(data[prop]);
 	}
 
     return object;

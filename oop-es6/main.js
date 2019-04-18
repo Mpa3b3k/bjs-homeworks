@@ -7,25 +7,28 @@ class Weapon {
 		this.range = range;
 	}
 	takeDamage(damage) {
-		if (durability -= damage < 1) { // тут пишет что durability не опр. не знаю в чём дело
-			durability = 1;
+		if (this.durability -= damage < 1) { // тут пишет что durability не опр. не знаю в чём дело
+			this.durability = 1;
 		} 
 		else {
-			durability -= damage;
+			this.durability -= damage;
 		}
 	}
 	getDamage() {
-		if (durability > durability * 30 / 100) {
-			return attack;
-		} else if (durability = 0) {
+		if (this.durability > this.durability * 30 / 100) {
+			return this.attack;
+		} else if (this.durability = 0) {
 			return 0;
 		} else {
 			return attack / 2;
 		}
 	}
 	isBroken() {
-		if (durability > 0) {
+		if (this.durability > 0) {
 			return false;
+		} else {
+			console.log("Weapon in not broken");
+			return true;
 		}
 	}
 } // по непонятной причине не срабатывает  в связи с чем не могу сделать второе задание
@@ -35,7 +38,7 @@ class StudentLog {
 		this.name = name;
 	}
 	getName() {
-		return name;
+		return this.name;
 	}
 	addGrade(grade, subject) {
 		constructor(subject, ...grade) {
