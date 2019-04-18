@@ -15,6 +15,8 @@ function setAlarm(time, callback) {
 
 function setDailyRhythm(wakeUpTime, bedTime) {
 	
+	
+
 }
 
 setInterval(setAlarm, 1000, now, setDailyRhythm);

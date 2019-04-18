@@ -63,10 +63,15 @@ function naming(a) {
 function getAverageScore( data ) {
     
 	let object = {};
+    let summ = 0;
+    let counter = 0;
 
 	for (let prop in data) {
 		object[prop] = findAverage(data[prop]);
+        summ += object[prop];
+        counter += 1;
 	}
+    object.averageAll = summ / counter;
 
     return object;
 }
