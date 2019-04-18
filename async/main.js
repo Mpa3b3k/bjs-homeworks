@@ -6,7 +6,9 @@ function setAlarm(time, callback) {
 	
 	let timeTo = new Date();
 
-
+	if (time == timeTo) {
+		callback;
+	}
 
 	return callback;
 }
