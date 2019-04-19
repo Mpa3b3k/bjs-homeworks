@@ -6,11 +6,19 @@ function setAlarm(time, callback) {
 	
 	let timeTo = new Date();
 
-	if (time == timeTo) {
-		callback;
+	setInterval(checkTime(time), 1000);
+
+	function checkTime(time) {
+		
+		if (time == timeTo) {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 
-	return callback;
+	return callback();
 }
 
 function setDailyRhythm(wakeUpTime, bedTime) {
