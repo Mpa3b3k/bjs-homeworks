@@ -3,22 +3,18 @@
 let now = new Date();
 
 function setAlarm(time, callback) {
-	
-	let timeTo = new Date();
-
-	setInterval(checkTime(time), 1000);
 
 	function checkTime(time) {
 		
-		if (time == timeTo) {
-			return true;
+		if (time == now) {
+			callback();
 		} else {
-			return false;
+			console.log("Not a time");
 		}
 
 	}
 
-	return callback();
+	return checkTime(now);
 }
 
 function setDailyRhythm(wakeUpTime, bedTime) {
