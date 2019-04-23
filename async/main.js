@@ -4,23 +4,30 @@ let now = new Date();
 
 function setAlarm(time, callback) {
 
-	function checkTime(time) {
+	let arrow = function checkTime(time) {
 		
 		if (time == now) {
 			callback();
-		} else {
-			console.log("Not a time");
 		}
 
 	}
 
-	return checkTime(now);
+	return arrow;
 }
 
 function setDailyRhythm(wakeUpTime, bedTime) {
-	
-	
+
+	function wakeUp() {
+		console.log("Vasya, wake up!");
+	}
+
+	function sleep() {
+		console.log("Vasya, go to the bed!");
+	}
+
+	setInterval(setAlarm(wakeUpTime, wakeUp), 1000);
+	setInterval(setAlarm(bedTime, sleep), 1000);
 
 }
 
-setInterval(setAlarm, 1000, now, setDailyRhythm);
+setDailyRhythm("07:00", "21:00");
