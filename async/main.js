@@ -1,6 +1,7 @@
 "use strict";
 
 let date = new Date();
+setInterval(date = new Date(), 1000);
 let now, hours, minutes;
 
 if (date.getHours() <10) {
@@ -28,7 +29,7 @@ function setAlarm(time, callback) {
 
 	}
 
-	checkTime(time);
+	arrow;
 
 	return arrow;
 }
