@@ -21,17 +21,13 @@ now = hours + ":" + minutes;
 
 function setAlarm(time, callback) {
 
-	let arrow = function checkTime(time) {
+	return function checkTime(time) {
 		
 		if (time == now) {
 			callback();
 		}
 
-	}
-
-	arrow;
-
-	return arrow;
+	};
 }
 
 function setDailyRhythm(wakeUpTime, bedTime) {
