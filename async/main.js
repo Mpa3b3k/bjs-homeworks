@@ -28,6 +28,8 @@ function setAlarm(time, callback) {
 
 	}
 
+	checkTime(time);
+
 	return arrow;
 }
 
