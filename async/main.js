@@ -1,6 +1,22 @@
 "use strict";
 
-let now = new Date();
+let date = new Date();
+let now, hours, minutes;
+
+if (date.getHours() <10) {
+	hours = "0" + date.getHours();
+} else {
+	hours = date.getHours();
+}
+
+if (date.getMinutes() <10) {
+	minutes = "0" + date.getMinutes();
+} else {
+	minutes = date.getMinutes();
+}
+
+now = hours + ":" + minutes;
+
 
 function setAlarm(time, callback) {
 
@@ -31,3 +47,5 @@ function setDailyRhythm(wakeUpTime, bedTime) {
 }
 
 setDailyRhythm("07:00", "21:00");
+
+console.log(now);
