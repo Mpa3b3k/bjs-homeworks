@@ -21,9 +21,11 @@ now = hours + ":" + minutes;
 
 function setAlarm(time, callback) {
 
-	return function checkTime(time) {
+	setInterval(checkTime, 1000);
+
+	return function checkTime(nowtime) {
 		
-		if (time == now) {
+		if (nowtime == now) {
 			callback();
 		}
 
@@ -40,8 +42,8 @@ function setDailyRhythm(wakeUpTime, bedTime) {
 		console.log("Vasya, go to the bed!");
 	}
 
-	setInterval(setAlarm(wakeUpTime, wakeUp), 1000);
-	setInterval(setAlarm(bedTime, sleep), 1000);
+	setAlarm(wakeUpTime, wakeUp);
+	setAlarm(bedTime, sleep);
 
 }
 
