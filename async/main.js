@@ -1,22 +1,8 @@
 "use strict";
 
 let date = new Date();
-setInterval(date = new Date(), 1000);
-let now, hours, minutes;
 
-if (date.getHours() <10) {
-	hours = "0" + date.getHours();
-} else {
-	hours = date.getHours();
-}
 
-if (date.getMinutes() <10) {
-	minutes = "0" + date.getMinutes();
-} else {
-	minutes = date.getMinutes();
-}
-
-now = hours + ":" + minutes;
 
 
 function setAlarm(time, callback) {
@@ -25,6 +11,22 @@ function setAlarm(time, callback) {
 
 	return function checkTime(nowtime) {
 		
+		let now, hours, minutes;
+
+		if (date.getHours() <10) {
+			hours = "0" + date.getHours();
+		} else {
+			hours = date.getHours();
+		}
+
+		if (date.getMinutes() <10) {
+			minutes = "0" + date.getMinutes();
+		} else {
+			minutes = date.getMinutes();
+		}
+
+		now = hours + ":" + minutes;
+
 		if (nowtime == now) {
 			callback();
 		}
