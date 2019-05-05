@@ -42,8 +42,11 @@ function setDailyRhythm(wakeUpTime, bedTime) {
 		console.log("Vasya, go to the bed!");
 	}
 
-	setAlarm(wakeUpTime, wakeUp);
-	setAlarm(bedTime, sleep);
+	let arrow1 = setAlarm(wakeUpTime, wakeUp);
+	let arrow2 = setAlarm(bedTime, sleep);
+
+	setInterval(arrow1, 1000);
+	setInterval(arrow2, 1000);
 
 }
 
