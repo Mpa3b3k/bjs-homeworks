@@ -45,8 +45,8 @@ function setDailyRhythm(wakeUpTime, bedTime) {
 	let arrow1 = setAlarm(wakeUpTime, wakeUp);
 	let arrow2 = setAlarm(bedTime, sleep);
 
-	setInterval(arrow1, 1000);
-	setInterval(arrow2, 1000);
+	setInterval(arrow1, 1000, date);
+	setInterval(arrow2, 1000, date);
 
 }
 
