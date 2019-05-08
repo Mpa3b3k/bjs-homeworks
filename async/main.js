@@ -1,9 +1,5 @@
 "use strict";
 
-let date = new Date();
-
-
-
 
 function setAlarm(time, callback) {
 	
@@ -11,16 +7,16 @@ function setAlarm(time, callback) {
 		
 		let now, hours, minutes;
 
-		if (date.getHours() <10) {
-			hours = "0" + date.getHours();
+		if (new Date().getHours() <10) {
+			hours = "0" + new Date().getHours();
 		} else {
-			hours = date.getHours();
+			hours = new Date().getHours();
 		}
 
-		if (date.getMinutes() <10) {
-			minutes = "0" + date.getMinutes();
+		if (new Date().getMinutes() <10) {
+			minutes = "0" + new Date().getMinutes();
 		} else {
-			minutes = date.getMinutes();
+			minutes = new Date().getMinutes();
 		}
 
 		now = hours + ":" + minutes;
@@ -45,8 +41,8 @@ function setDailyRhythm(wakeUpTime, bedTime) {
 	let arrow1 = setAlarm(wakeUpTime, wakeUp);
 	let arrow2 = setAlarm(bedTime, sleep);
 
-	setInterval(arrow1, 1000, date);
-	setInterval(arrow2, 1000, date);
+	setInterval(arrow1, 1000, new Date());
+	setInterval(arrow2, 1000, new Date());
 
 }
 
