@@ -21,7 +21,7 @@ function setAlarm(time, callback) {
 
 		now = hours + ":" + minutes;
 
-		if (nowtime == now) {
+		if (time == now) {
 			callback();
 		}
 
@@ -46,4 +46,4 @@ function setDailyRhythm(wakeUpTime, bedTime) {
 
 }
 
-setDailyRhythm("07:00", "21:00");
+setDailyRhythm("07:00", "19:45");
